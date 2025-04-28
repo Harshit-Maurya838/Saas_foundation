@@ -3,7 +3,7 @@ from django.shortcuts import render
 from visits.models import PageVisit
 
 def homePageView(request):
-    visits = PageVisit.objects.filter(path=request.path) 
+    visits = PageVisit.objects.filter(page=request.path) 
     my_context = {
         "Page_Title": "Home Page",
         "Page_Visits": visits.count()
