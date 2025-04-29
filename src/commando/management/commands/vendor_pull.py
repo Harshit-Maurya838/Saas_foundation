@@ -3,11 +3,12 @@ from typing import Any
 import helpers
 from django.conf import settings
 
-STATIC_VENDOR_DIR = getattr(settings, 'STATIC_VENDOR_DIR')
+STATICFILES_VENDOR_DIR = getattr(settings, 'STATICFILES_VENDOR_DIR')
 
 VENDOR_STATICFILES = {
     "flowbite.min.css": "https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.css",
     "flowbite.min.js": "https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.js",
+    "flowbite.min.js.map": "https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.js.map"
 }
 
 class Command(BaseCommand):
@@ -16,7 +17,7 @@ class Command(BaseCommand):
         self.stdout.write("Downloading Vendors static files")
         completed_urls = []
         for name, url in VENDOR_STATICFILES.items():
-            out_path = STATIC_VENDOR_DIR / name
+            out_path = STATICFILES_VENDOR_DIR / name
             dl_success = helpers.downlaod_to_local(url, out_path)
             if dl_success:
                 completed_urls.append(url)
