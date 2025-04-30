@@ -71,13 +71,10 @@ INSTALLED_APPS = [
     'visits',
     'commando',
     #third-party-app
-    "allauth_ui",
     'allauth',
     'allauth.account',
     'allauth.socialaccount',
     'allauth.socialaccount.providers.github',
-    "widget_tweaks",
-    "slippers",
 ]
 
 MIDDLEWARE = [
