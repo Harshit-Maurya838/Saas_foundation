@@ -54,6 +54,7 @@ ENV DEBUG=${DEBUG}
 # such as:
 RUN python manage.py vendor_pull
 RUN python manage.py collectstatic --noinput
+#whitenoise -> v3
 
 # set the Django default project name
 ARG PROJ_NAME="foundation"

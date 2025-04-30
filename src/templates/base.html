@@ -1,14 +1,19 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% block title %}Saas{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'allauth_ui/output.css' %}">
     {% include 'base/css.html' %}
 </head>
 <body>
     {% include 'nav/navbar.html' %}
-    {% block content %}{% endblock %}
+    {% include 'base/messages.html' with messages=messages%}
+    <main>
+        {% block content %}{% endblock %}
+    </main>
     {% include 'base/js.html' %}
 </body>
 </html>
